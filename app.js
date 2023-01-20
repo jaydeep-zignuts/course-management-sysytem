@@ -26,5 +26,4 @@ app.get('/',(req,res)=>{
 const PORT=process.env.PORT || 3001 
 
 
-// courseController(app);
 app.listen(PORT);

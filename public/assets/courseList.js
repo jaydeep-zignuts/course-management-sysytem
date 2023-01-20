@@ -1,6 +1,5 @@
 $(document).ready(function () {
   $("form").on("submit", function () {
-    // var course = $("form input");
     var cname = $("#cname").val();
     var cduration = $("#cduration").val();
     var cfees = $("#cfees").val();
@@ -52,30 +51,7 @@ $(document).ready(function () {
       },
     });
     
-    // return false;
   });
 
-  // $(".updateData").on("click", function () {
-  //   // var course = $(this).val();
-  //   var course = $("form").data('id');
 
-  //   alert("Updated ::  ==> "+course);
-  //   $.ajax({
-  //     type: "PUT",
-      
-  //     url: `/${course}`,
-      
-  //     data: {
-  //       course_name: cname,
-  //       course_duration: cduration,
-  //       course_fees: cfees,
-  //     },
-  //     success: function (data) {
-  //       alert("Course Updated Successfully.....");
-  //       // location.href = "/";
-  //     },
-  //   });
-
-  //   return false;
-  // });
 });

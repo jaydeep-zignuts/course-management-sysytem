@@ -1,42 +1,10 @@
-// var bodyParser = require("body-parser");
-
-// var urlencodededParser = bodyParser.urlencoded({ extended: false });
 const { render } = require('ejs');
 const db =require('../models');
 
-// var data = [
-//   { cname: "java", cduration: 30, cfees: 6000 },
-//   { cname: "python", cduration: 60, cfees: 12000 },
-// ];
-//main model for course list
+
 const Course_List=db.course_list;
  
-// module.exports = function (app) {
-//   app.get("/courses", function (req, res) {
-//     res.render("courses", { course: data });
-//   });
-//   app.post("/courses", function (req, res) {
-//     // app.post("/courses",urlencodededParser,function(req,res){
 
-//     data.push(req.body);
-//     res.json(data);
-//     // res.render('courses');
-//   });
-//   app.delete("/courses/:course", function (req, res) {
-//     data = data.filter(function(courses) {
-          
-//             return courses.course.replace(/ /g, '-') !== req.params.course;
-//           });
-//           res.json(data);
-//   });
-
-//   app.get("/addCourse", function (req, res) {
-//     res.render("addCourse");
-//   });
-// };
-//
-
-//Add Course
 
 const addCourse= async (req,res)=>{
   let data={
@@ -50,7 +18,6 @@ const addCourse= async (req,res)=>{
 const getCourse = async(req,res)=>{
   let data= await Course_List.findAll({});
   res.render('courses' , {course : data});
-  // res.send(data);
 
 }
 const updateCourse=async(req,res)=>{
@@ -63,8 +30,6 @@ const updateCourse=async(req,res)=>{
   let data1= await Course_List.findAll({});
   res.render('courses' , {course : data1});
 
-  // res.send(data);
-  // res.render('courses', );
 }
 
 const deleteCourse=async(req,res)=>{

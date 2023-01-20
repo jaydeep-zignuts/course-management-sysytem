@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1,
             shrink-to-fit=no">
@@ -63,11 +62,8 @@
                     </div>
                 </div>
             </div>
-            <!-- <script src="assets/courseList.js"></script>
-         -->
             <script>
             $(".updateData").on("click", function () {
-        // var course = $(this).val();
     let course = $("form").data('id');
     var cname = $("#cname").val();
     var cduration = $("#cduration").val();
@@ -82,9 +78,7 @@
       data:{course_name: cname,
         course_duration: cduration,
         course_fees: cfees},
-    //   data: JSON.stringify(data),
-    //   dataType: 'json',
-    //   contentType: 'application/json',
+    
       success: function (data) {
         alert("Course Updated Successfully.....");
         location.href = "/getCourse";
