@@ -1,9 +1,11 @@
 const dbConfig= require('../config/dbConfig.js');
  const {Sequelize , DataTypes} = require('sequelize');
  const sequelize= new Sequelize(
+   //  dbConfig.PORT,
     dbConfig.DB,
     dbConfig.USER,
     dbConfig.PASSWORD,{
+        port:dbConfig.PORT,
         host: dbConfig.HOST,
         dialect : dbConfig.dialect,
         operatorsAliases: false
