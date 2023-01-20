@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container-fluid{
+    margin:0;
+    padding: 0;
+}
+.card-header{
+    text-transform: uppercase;
+    font-weight: 800;
+}

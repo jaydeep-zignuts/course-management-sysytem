@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/assets/style.css" type="text/css">
+    <!-- <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <title>Course Management</title>
+</head>
+
+<body>
+    <div class="container-fluid" style="margin: 0;">
+        <%- include ('./partials/nav.ejs') %>
+            <div class="container" >
+                <h1 style="margin-top: 70px;">All Courses</h1>
+
+                <div class="row">
+                    <% for(let i=0;i<course.length ; i++) { %>
+                    <div class="col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                            <div class="card mt-4 " >
+                                <div class="card-header" >
+                                    <%= course[i].course_name %>
+                        
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text"><%= course[i].course_duration %> Month</p>
+                                    <p class="card-text">Rs. <%= course[i].course_fees %></p>
+                                </div>
+                                <div class="card-footer ">
+                                    <a href="update/<%= course[i].id %>"  > <button class="btn btn-success update" value="<%= course[i].id %>" >Update </button></a>
+                                    <button class="btn btn-danger delete" value="<%= course[i].id %>" >Delete </button>
+                        
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+
+
+
+
+                
+            </div>
+    </div>
+    <script src="assets/courseList.js"></script>
+
+</body>
+
+</html>
+
